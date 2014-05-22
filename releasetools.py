@@ -24,9 +24,6 @@ def FullOTA_Assertions(self):
 
 def IncrementalOTA_Assertions(self):
 	Thanks(self)
-
-def FullOTA_InstallEnd(self):
-	AddBootloaderAssertion(self)
 	
 	
 def Thanks(self):
@@ -36,10 +33,4 @@ def Thanks(self):
 	self.script.AppendExtra('ui_print("    xuefy,suky,crazyi,windxixi,");')
 	self.script.AppendExtra('ui_print("    wangsai008,bingo1991");')
 	self.script.AppendExtra('ui_print("============================================");')
-	
-def AddBootloaderAssertion(self):
-	self.script.AppendExtra('package_extract_file("system/etc/init.qcom.baseband.sh", "/tmp/init.qcom.baseband.sh");')
-	self.script.AppendExtra('ui_print("Get your Phone version start...");')
-	self.script.AppendExtra('set_perm(0, 0, 0755, "/tmp/init.qcom.baseband.sh");')
-	self.script.AppendExtra('run_program("/tmp/init.qcom.baseband.sh");')
-	self.script.AppendExtra('ui_print("Get your Phone version end!");')
+
